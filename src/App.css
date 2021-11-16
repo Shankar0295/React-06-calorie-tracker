@@ -1,0 +1,22 @@
+@media (min-width: 320px) and (max-width: 767px){
+    .list-container {
+        width: 100%;
+}
+.meal-input, .calorie-input {
+    margin-top: 10px;
+    margin-left: 18px;
+}
+.title{
+    font-size: 25px;
+
+}
+}
+
+/* @media (min-width: 768px) and (max-width: 1023px){
+    .temp-card{
+        width: 30%
+    }
+    .container{
+        width:50%;
+    }
+} */

@@ -1,0 +1,48 @@
+.home-container{
+    width: 80%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.input-container{
+    text-align: center;
+}
+
+.meal-container, .calorie-container{
+    margin-bottom: 15px;   
+}
+
+.meal-input{
+    margin-left: 18px;
+}
+
+input{
+    outline: 0;
+    padding: 5px 2px;
+}
+
+.meal-btn{
+    background: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #007bff;
+    padding: 5px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.btn-center{
+    text-align: center;
+}
+
+.clear-btn{
+    background: #dc3545;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #dc3545;
+    padding: 5px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
