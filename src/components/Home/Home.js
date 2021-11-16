@@ -12,11 +12,12 @@ const Home = () => {
     const [editId, setEditId] = useState(null)
     const [option, setOption] = useState('')
 
+    //onsubmit
     const submit = (e) => {
         e.preventDefault();
         if (meal === '' && calorie === '') {
             alert("Please enter meal and calorie")
-        } else if (meal && edit) {
+        } else if (meal && edit) {//if edited
             setData(
                 data.map((item) => {
                     if (item.id === editId) {
@@ -30,7 +31,7 @@ const Home = () => {
             setCalorie(0);
             setEditId(null);
             setEdit(false);
-        } else {
+        } else {//on load
             setData((data) => [...data, { "id": new Date().getTime().toString(), "food": meal, "cal": calorie }])
             console.log(data)
             setMeal('');
@@ -39,6 +40,7 @@ const Home = () => {
 
     }
 
+    //edit button click
     const editItem = (id) => {
         console.log(id)
         let findItem = data.find((item) => item.id === id)
@@ -49,12 +51,13 @@ const Home = () => {
         setEditId(id)
     }
 
+    //delete button click
     const deleteItem = (id) => {
         setData(data.filter((item) => item.id !== id))
         console.log(id)
     }
 
-
+    //for sort
     useEffect(() => {
         const mealList = [...data];
         console.log(option)
@@ -68,10 +71,12 @@ const Home = () => {
         // eslint-disable-next-line
     }, [option])
 
+    //for clear all button
     const clearList = () => {
         setData([]);
     }
 
+    //jsx
     return (
         <div className="home-container">
             <form className="input-container" onSubmit={submit}>

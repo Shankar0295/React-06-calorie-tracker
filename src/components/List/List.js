@@ -7,6 +7,7 @@ const List = ({ props, edit, remove, setOption, option }) => {
 
     console.log(props, "props")
 
+    //for total calorie count
     const total = props.map((meal) => parseInt(meal.cal))
         .reduce((acc, value) => {
             let totalVal = acc + value
@@ -14,7 +15,7 @@ const List = ({ props, edit, remove, setOption, option }) => {
         }, 0)
     console.log(total)
 
-
+    //jsx
     return (
         <div className="list-container">
             <div className="list-sort">
