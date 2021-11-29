@@ -6,7 +6,7 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 const Home = () => {
 
     const [meal, setMeal] = useState('');
-    const [calorie, setCalorie] = useState(0)
+    const [calorie, setCalorie] = useState('')
     const [data, setData] = useLocalStorage("data", [])
     const [edit, setEdit] = useState(false)
     const [editId, setEditId] = useState(null)
@@ -15,7 +15,7 @@ const Home = () => {
     //onsubmit
     const submit = (e) => {
         e.preventDefault();
-        if (meal === '' && calorie === '') {
+        if (meal === '' || calorie === '') {
             alert("Please enter meal and calorie")
         } else if (meal && edit) {//if edited
             setData(
@@ -28,14 +28,14 @@ const Home = () => {
                 })
             )
             setMeal('');
-            setCalorie(0);
+            setCalorie('');
             setEditId(null);
             setEdit(false);
         } else {//on load
             setData((data) => [...data, { "id": new Date().getTime().toString(), "food": meal, "cal": calorie }])
             console.log(data)
             setMeal('');
-            setCalorie(0);
+            setCalorie('');
         }
 
     }
